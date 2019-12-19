@@ -1,18 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background_def">
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:text="Memoire'19"
+        android:textSize="40dp"
+        android:textColor="@color/red"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/logoImage"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="0dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/login_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Ticket Scanner"
+        android:layout_below="@id/logoImage"
+        android:textSize="18sp"
+        android:textColor="@color/lightgrey"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/login_header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Login"
+        android:layout_below="@id/login_info"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"/>
+
+
+
+    <EditText
+        android:id="@+id/login_user"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/accent_stroke"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/login_header_text"
+        android:hint="Type in Email"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/accent_stroke"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/login_user"
+        android:hint="Type in Email"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="20dp"/>
+
+
+
+    <Button
+        android:id="@+id/login_institution"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@id/login_password"
+        android:background="@drawable/curved_gradient_button_background"
+        android:layout_marginTop="70dp"
+        android:text="Institution Login"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        />
+
+
+</RelativeLayout>

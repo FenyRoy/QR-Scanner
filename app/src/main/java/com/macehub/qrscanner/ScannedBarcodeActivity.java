@@ -3,6 +3,7 @@ package com.macehub.qrscanner;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.SparseArray;
@@ -97,7 +98,7 @@ public class ScannedBarcodeActivity extends AppCompatActivity {
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
             public void release() {
-                Toast.makeText(getApplicationContext(), "To prevent memory leaks barcode scanner has been stopped", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), "To prevent memory leaks barcode scanner has been stopped", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -113,9 +114,11 @@ public class ScannedBarcodeActivity extends AppCompatActivity {
                                 intentData = barcodes.valueAt(0).email.address;
                                 txtBarcodeValue.setText(intentData);
                                 isEmail = true;
-                                btnAction.setText("ADD CONTENT TO THE MAIL");
+                                btnAction.setVisibility(View.INVISIBLE);
+                                btnAction.setText("No Tickets Found");
                             } else {
                                 isEmail = false;
+                                btnAction.setVisibility(View.VISIBLE);
                                 btnAction.setText("LAUNCH URL");
                                 intentData = barcodes.valueAt(0).displayValue;
                                 txtBarcodeValue.setText(intentData);
