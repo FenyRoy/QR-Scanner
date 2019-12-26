@@ -31,7 +31,7 @@ public class ScannedBarcodeActivity extends AppCompatActivity {
 
 
     SurfaceView surfaceView;
-    TextView txtBarcodeValue;
+    TextView txtBarcodeValue,txtTotal,txtPresent;
     private BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
     private static final int REQUEST_CAMERA_PERMISSION = 201;
@@ -44,12 +44,17 @@ public class ScannedBarcodeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanned_barcode);
         initViews();
+
+        txtTotal.setText("100");
+        txtPresent.setText("75");
     }
 
     private void initViews() {
         txtBarcodeValue = findViewById(R.id.txtBarcodeValue);
         surfaceView = findViewById(R.id.surfaceView);
         btnAction = findViewById(R.id.btnAction);
+        txtTotal = findViewById(R.id.statustotal);
+        txtPresent = findViewById(R.id.statuspresent);
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,5 +176,11 @@ public class ScannedBarcodeActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         initialiseDetectorsAndSources();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
