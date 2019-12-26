@@ -71,10 +71,10 @@
         android:background="@drawable/accent_stroke"
         android:layout_gravity="center_horizontal"
         android:layout_below="@id/login_user"
-        android:hint="Type in Email"
+        android:hint="Type in Password"
         android:gravity="center"
         android:textSize="14sp"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:layout_marginTop="20dp"/>
 
 
@@ -87,7 +87,7 @@
         android:layout_below="@id/login_password"
         android:background="@drawable/curved_gradient_button_background"
         android:layout_marginTop="70dp"
-        android:text="Institution Login"
+        android:text="  Login  "
         android:textSize="15sp"
         android:layout_width="wrap_content"
         android:paddingHorizontal="20dp"

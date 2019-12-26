@@ -21,6 +21,10 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 public class ScannedBarcodeActivity extends AppCompatActivity {
@@ -50,7 +54,33 @@ public class ScannedBarcodeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (intentData.length() > 0) {
+
+
                     Toast.makeText(ScannedBarcodeActivity.this, intentData, Toast.LENGTH_SHORT).show();
+
+
+                    JSONObject obj = new JSONObject();
+                    try {
+                        obj.put("id", "3");
+                        obj.put("fullname", "Shameel");
+                        obj.put("email", "aada");
+                        obj.put("batch", "1996 MECH B");
+                        obj.put("phone", "9961568686");
+                        obj.put("spouse","yes");
+                        obj.put("children","2");
+                        obj.put("kids","1");
+                        obj.put("shirt","m");
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                    Intent mIntent = new Intent(ScannedBarcodeActivity.this, VerifyActivity.class);
+                    mIntent.putExtra("ITEM_EXTRA", obj.toString());
+                    mIntent.putExtra("ID", intentData);
+                    startActivity(mIntent);
+
+
                 }
             }
         });
