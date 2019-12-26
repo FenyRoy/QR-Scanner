@@ -80,7 +80,7 @@
 
 
     <Button
-        android:id="@+id/login_institution"
+        android:id="@+id/login_btn"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
